@@ -37,26 +37,26 @@ export class LoginComponent implements OnInit {
 
   }
   loginAttempt(){
-    let user = {username:this.email, pwd: this.pwd};
+    let user = {email:this.email, pwd: this.pwd};
     // this.router.navigateByUrl("/account");
-    this.httpClient.post(BACKEND_URL + '/login', user, httpOptions)
+    this.httpClient.post(BACKEND_URL + '/api/auth', user, httpOptions)
     .subscribe((data:any)=>{
       alert("posting: " +JSON.stringify(user));
       alert("postRes: " +JSON.stringify(data));
-      if(data.ok){
+      if(data.valid){
         alert("correct");
         sessionStorage.setItem('id', data.userid.toString());
-        sessionStorage.setItem('userlogin', data.ok.toString());
+        sessionStorage.setItem('userlogin', data.valid.toString());
         sessionStorage.setItem('username', data.username); 
-        sessionStorage.setItem('birthdate', data.userbirthdate);
-        sessionStorage.setItem('age', data.userage.toString());
+        sessionStorage.setItem('birthdate', data.birthdate);
+        sessionStorage.setItem('age', data.age.toString());
 
          this.router.navigateByUrl("/account");
       
       }
-    else{
-      alert("Credentials incorrect!");
-    };
+    // else{
+    //   alert("Credentials incorrect!");
+    // };
     })
   
   }

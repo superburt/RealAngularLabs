@@ -10,21 +10,22 @@ module.exports = function(app){
         }
             
             var customer = {}; 
-            console.log(req);
+            // console.log(req);
 
             customer.valid = false;
             customer.email = "";
             customer.username = "";
             customer.birthdate = ""; 
             customer.age = 0;
+            console.log(req.body)
             
-        for (let i=0;i<user.length;i++){
-            if (req.body.email == users[i].email && req.body.upwd == users[i].pwd){
-                customer.valid = true;
+        for (let i=0;i<users.length;i++){
+            if ((req.body.email == users[i].email) && (req.body.pwd == users[i].pwd)){
+                customer.valid = "true";
                 customer.email = users[i].email;
                 customer.username = users[i].username;
                 customer.birthdate = users[i].birthdate;
-                customer.age = user[i].age;
+                customer.age = users[i].age;
             }
         }
             res.send(customer);

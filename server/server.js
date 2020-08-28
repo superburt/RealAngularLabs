@@ -6,23 +6,22 @@ var cors = require('cors')
 app.use(cors());
 //app.use(express.static(__dirname + "/www"));
 
+var bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
+// support parsing of application/json type post data
+app.use(bodyParser.json());
 
-const bodyParser = require('body-parser');
-app.use (bodyParser.json());
-
-module.exports = function(http){
-    http.listen(3000,()=>{
-        var d = new Date();
-        console.log('Server has been started on : ' + d);
-    })
-}
+http.listen(3000,()=>{
+    var d = new Date();
+    console.log('Server has been started on : ' + d);
+});
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/../dist/index');
 });
 
 
-require('../routes/api-login.js')(app,path);
+require('./routes/api-login.js')(app,path);
 
 
 
