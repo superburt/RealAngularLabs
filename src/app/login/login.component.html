@@ -1,0 +1,14 @@
+<p>login works!</p>
+
+<form>
+    <label>Email: </label>
+    <input type="text" [(ngModel)]="email" name="email">
+    <label>Password: </label>
+    <input type="text" [(ngModel)]="pwd" name="pwd">
+
+    <!-- <label>Birthdate: </label>
+    <input type="date" [(ngModel)]="birthdate" name="birthdate">
+    <label>Age: </label>
+    <input type="number" [(ngModel)]="age" name="age"> -->
+</form>
+<button (click)="loginAttempt()">submit</button>
