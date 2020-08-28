@@ -4,7 +4,7 @@ import {FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { Router } from '@angular/router';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
