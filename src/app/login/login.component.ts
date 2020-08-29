@@ -45,18 +45,20 @@ export class LoginComponent implements OnInit {
       alert("postRes: " +JSON.stringify(data));
       if(data.valid){
         alert("correct");
-        sessionStorage.setItem('id', data.userid.toString());
-        sessionStorage.setItem('userlogin', data.valid.toString());
-        sessionStorage.setItem('username', data.username); 
-        sessionStorage.setItem('birthdate', data.birthdate);
-        sessionStorage.setItem('age', data.age.toString());
-
-         this.router.navigateByUrl("/account");
+        
+        //   sessionStorage.setItem('id', data.userid.toString());
+          console.log(sessionStorage.getItem("id"));
+          sessionStorage.setItem('username', data.username); 
+        console.log(sessionStorage.getItem('username'));
+          // sessionStorage.setItem('birthdate', data.birthdate);
+          // sessionStorage.setItem('age', data.age.toString());
+        this.router.navigateByUrl("/account");
+         
       
       }
-    // else{
-    //   alert("Credentials incorrect!");
-    // };
+      else{
+        alert("Credentials incorrect!");
+      };
     })
   
   }
