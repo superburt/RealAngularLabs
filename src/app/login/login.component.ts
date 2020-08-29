@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
       alert("postRes: " +JSON.stringify(data));
       if(data.valid){
         alert("correct");
-          
+          ///
           sessionStorage.setItem('email', data.email)
           sessionStorage.setItem('pwd', data.pwd);
           // console.log(sessionStorage.getItem("id"));
