@@ -3,15 +3,32 @@
 <img src="tree.jpg" alt="tree">
 
 
+<table>
+    <tr>
+        <td>Email</td>
+        <td>Password</td>
+        <td>Age</td>
+        <td>Birthdate</td>
+    </tr>
+    <tr>
+        <td>{{user.email}}</td>
+        <td>{{user.pwd}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.birthdate}}</td>
+    </tr>
+</table>
 
-<form> 
+
+
+
+<!-- <form> 
     <label>Email: </label>
     <input type="text" [(ngModel)]="email" name = "email">
     <label>Password: </label>
     <input type="text" [(ngModel)]="pwd" name = "pwd">
-    <label>Birthdate: </label>
+    <label>Birthdate: </label> -->
     <!-- <input type="date" [(ngModel)]="birthdate" name="birthdate">
     <label>Age: </label>
     <input type="number" [(ngModel)]="age" name="age"> -->
-</form>
-<button (click)="setItem()">submit</button>
+<!-- </form>
+<button (click)="setItem()">submit</button> -->

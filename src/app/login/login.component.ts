@@ -30,11 +30,11 @@ export class LoginComponent implements OnInit {
   pwd: string = "";
 
 
-
+  
   constructor(private router: Router, private httpClient: HttpClient) { }
-
+  
   ngOnInit(): void {
-
+      
   }
   loginAttempt(){
     let user = {email:this.email, pwd: this.pwd};
@@ -45,13 +45,14 @@ export class LoginComponent implements OnInit {
       alert("postRes: " +JSON.stringify(data));
       if(data.valid){
         alert("correct");
-        
-        //   sessionStorage.setItem('id', data.userid.toString());
-          console.log(sessionStorage.getItem("id"));
+          
+          sessionStorage.setItem('email', data.email)
+          sessionStorage.setItem('pwd', data.pwd);
+          // console.log(sessionStorage.getItem("id"));
           sessionStorage.setItem('username', data.username); 
-        console.log(sessionStorage.getItem('username'));
-          // sessionStorage.setItem('birthdate', data.birthdate);
-          // sessionStorage.setItem('age', data.age.toString());
+          // console.log(sessionStorage.getItem('username'));
+          sessionStorage.setItem('birthdate', data.birthdate);
+          sessionStorage.setItem('age', data.age.toString());
         this.router.navigateByUrl("/account");
          
       
